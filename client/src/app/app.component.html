@@ -1,0 +1,19 @@
+<form [formGroup]="searchForm" (ngSubmit)="search()">
+  <table>
+    <tr>
+      <td>Search for GIFs:</td>
+      <td>
+        <input type="text" size="30" formControlName="search" />
+      </td>
+      <td>
+        <button type="submit" [disabled]="searchForm.invalid">Search</button>
+      </td>
+    </tr>
+  </table>
+</form>
+
+<table>
+  <tr *ngFor="let item of gifList">
+    <img src="{{ item }}" alt="">
+  </tr>
+</table>
